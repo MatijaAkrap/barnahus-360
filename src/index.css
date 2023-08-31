@@ -7,3 +7,37 @@ body,
 	width: 100%;
 	height: 100%;
 }
+
+.app {
+	position: relative;
+	height: 100vh;
+}
+
+.room-navigation-container {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	bottom: 0;
+	width: 100%;
+	height: 68px;
+	background-color: #3d0a56;
+	z-index: 1000;
+	overflow-x: auto;
+	padding-left: 130px;
+}
+
+button {
+	height: 40px;
+	width: auto;
+	border-radius: 8px;
+	background-color: #573169;
+	color: white;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+button:last-child {
+	margin-right: 140px;
+}
