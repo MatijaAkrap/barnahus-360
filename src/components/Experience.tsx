@@ -10,21 +10,36 @@ interface IExperienceProps {
 }
 
 const Experience = (props: IExperienceProps) => {
-	const getKey = (obj: any, value: string) => {
-		const keyIndex = Object.values(obj).indexOf(value);
-
-		return Object.keys(obj)[keyIndex];
-	};
-	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	// @ts-ignore
-	const file = RoomsImagesEnum[getKey(RoomsEnum, props.currentRoom)];
+	// const medicalHealth = useEnvironment({ files: RoomsImagesEnum.MEDICAL_HEALTH });
+	// const interviewRoom = useEnvironment({ files: RoomsImagesEnum.INTERVIEW_ROOM });
+	// const criminalInvestigation = useEnvironment({ files: RoomsImagesEnum.CRIMINAL_INVESTIGATION });
+	// const physicalRoom = useEnvironment({ files: RoomsImagesEnum.PHYSICAL_ROOM });
 
 	return (
 		<>
 			<Perf position='top-left' />
 			<OrbitControls makeDefault />
 			<Suspense fallback={null}>
-				<Environment background files={file} resolution={32} />
+				<Environment
+					background={props.currentRoom === RoomsEnum.MEDICAL_HEALTH}
+					files={RoomsImagesEnum.MEDICAL_HEALTH}
+					resolution={32}
+				/>
+				<Environment
+					background={props.currentRoom === RoomsEnum.INTERVIEW_ROOM}
+					files={RoomsImagesEnum.INTERVIEW_ROOM}
+					resolution={32}
+				/>
+				<Environment
+					background={props.currentRoom === RoomsEnum.CRIMINAL_INVESTIGATION}
+					files={RoomsImagesEnum.CRIMINAL_INVESTIGATION}
+					resolution={32}
+				/>
+				<Environment
+					background={props.currentRoom === RoomsEnum.PHYSICAL_ROOM}
+					files={RoomsImagesEnum.PHYSICAL_ROOM}
+					resolution={32}
+				/>
 			</Suspense>
 		</>
 	);
