@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Environment, OrbitControls } from '@react-three/drei';
 import { Perf } from 'r3f-perf';
-import { Suspense } from 'react';
 import { RoomsImagesEnum } from '../models/RoomImagesEnum';
 import { RoomsEnum } from '../models/RoomsEnum';
 
@@ -19,28 +18,26 @@ const Experience = (props: IExperienceProps) => {
 		<>
 			<Perf position='top-left' />
 			<OrbitControls makeDefault />
-			<Suspense fallback={null}>
-				<Environment
-					background={props.currentRoom === RoomsEnum.MEDICAL_HEALTH}
-					files={RoomsImagesEnum.MEDICAL_HEALTH}
-					resolution={32}
-				/>
-				<Environment
-					background={props.currentRoom === RoomsEnum.INTERVIEW_ROOM}
-					files={RoomsImagesEnum.INTERVIEW_ROOM}
-					resolution={32}
-				/>
-				<Environment
-					background={props.currentRoom === RoomsEnum.CRIMINAL_INVESTIGATION}
-					files={RoomsImagesEnum.CRIMINAL_INVESTIGATION}
-					resolution={32}
-				/>
-				<Environment
-					background={props.currentRoom === RoomsEnum.PHYSICAL_ROOM}
-					files={RoomsImagesEnum.PHYSICAL_ROOM}
-					resolution={32}
-				/>
-			</Suspense>
+			<Environment
+				background={props.currentRoom === RoomsEnum.MEDICAL_HEALTH}
+				files={RoomsImagesEnum.MEDICAL_HEALTH}
+				resolution={32}
+			/>
+			<Environment
+				background={props.currentRoom === RoomsEnum.INTERVIEW_ROOM}
+				files={RoomsImagesEnum.INTERVIEW_ROOM}
+				resolution={32}
+			/>
+			<Environment
+				background={props.currentRoom === RoomsEnum.CRIMINAL_INVESTIGATION}
+				files={RoomsImagesEnum.CRIMINAL_INVESTIGATION}
+				resolution={32}
+			/>
+			<Environment
+				background={props.currentRoom === RoomsEnum.PHYSICAL_ROOM}
+				files={RoomsImagesEnum.PHYSICAL_ROOM}
+				resolution={32}
+			/>
 		</>
 	);
 };
