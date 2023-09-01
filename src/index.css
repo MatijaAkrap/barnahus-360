@@ -41,3 +41,35 @@ button {
 button:last-child {
 	margin-right: 140px;
 }
+
+.hotspot-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	border-radius: 40%;
+	top: -32px;
+	left: -32px;
+	height: 68px;
+	width: 68px;
+	z-index: 1000;
+	cursor: help;
+	white-space: wrap;
+}
+
+label {
+	cursor: help;
+	font-weight: 600;
+}
+
+.hotspot-info-container {
+	background-color: white;
+	border: solid 1px black;
+	border-radius: 8px;
+	width: 100px;
+	font-weight: 500;
+	padding: 10px;
+	margin-top: 18px;
+	margin-left: 18px;
+	transition: transform 1.5s ease-in-out;
+}
